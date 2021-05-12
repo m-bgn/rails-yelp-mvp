@@ -1,0 +1,16 @@
+<div class="container mt-5 width-200">
+  <div class="row">
+    <div class="col">
+      <h2><%= @restaurant.name %></h2>
+      <p>Category:<%= @restaurant.category %></p>
+      <p>Address:<%= @restaurant.address %></p>
+      <p>Reviews:</p>
+      <% @restaurant.reviews.each do |review| %>
+      <div class="d-flex">
+        <p>- <%= review.content %> | Rate: <%= review.rating %>/5</p>
+      </div>
+      <% end %>
+    </div>
+    <%= link_to "Write a review", new_restaurant_review_path(@restaurant), class: "btn border" %>
+  </div>
+</div>
